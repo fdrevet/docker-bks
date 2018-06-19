@@ -5,11 +5,12 @@ export CLASSPATH=/src/bcprov.jar
 keytool \
       -import \
       -v \
+      -noprompt \
       -trustcacerts \
       -alias 0 \
-      -file <(openssl x509 -in /etc/openssl/$PEM_FILE \
+      -file <(openssl x509 -in /etc/openssl/$PEM_FILE) \
       -keystore /etc/openssl/$BKS_FILE \
       -storetype BKS \
       -provider org.bouncycastle.jce.provider.BouncyCastleProvider \
       -providerpath /src/bcprov.jar \
-      -storepass "$STORE_PASSWORD"
+      -storepass $STORE_PASSWORD
