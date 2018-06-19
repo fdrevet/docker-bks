@@ -8,6 +8,9 @@ RUN apk add --update openssl && rm -rf /var/cache/apk/*
 ADD ${BCPROV_JAR} /src/bcprov.jar
 ADD docker-entrypoint.sh /
 
+VOLUME ["/etc/openssl/input.pem"]
+VOLUME ["/etc/openssl/output.bks"]
+
 ENV CERT_FILE cert.pem
 ENV BKS_FILE cert.bks
 
