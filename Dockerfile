@@ -6,6 +6,8 @@ ENV BCPROV_JAR http://www.bouncycastle.org/download/bcprov-jdk15on-${BCPROV_VERS
 ENV CERT_FILE cert.pem
 ENV BKS_FILE cert.bks
 
+RUN apk add --update openssl && rm -rf /var/cache/apk/*
+
 ADD ${BCPROV_JAR} /src/bcprov.jar
 ADD docker-entrypoint.sh /
 
