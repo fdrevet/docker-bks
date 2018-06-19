@@ -7,9 +7,9 @@ keytool \
       -v \
       -trustcacerts \
       -alias 0 \
-      -file <(openssl x509 -in cert.pem) \
-      -keystore cert.bks \
-      -storetype BKS \
+      -file <(openssl x509 -in $CERT_FILE) \
+      -keystore $ \
+      -storetype $BKS_FILE \
       -provider org.bouncycastle.jce.provider.BouncyCastleProvider \
       -providerpath /src/bcprov.jar \
-      -storepass "$1"
+      -storepass "$STORE_PASSWORD"
