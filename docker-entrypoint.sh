@@ -8,8 +8,8 @@ keytool \
       -trustcacerts \
       -alias 0 \
       -file <(openssl x509 -in $CERT_FILE) \
-      -keystore $ \
-      -storetype $BKS_FILE \
+      -keystore $BKS_FILE \
+      -storetype BKS \
       -provider org.bouncycastle.jce.provider.BouncyCastleProvider \
       -providerpath /src/bcprov.jar \
       -storepass "$STORE_PASSWORD"
